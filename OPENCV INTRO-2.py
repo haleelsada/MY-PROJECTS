@@ -23,7 +23,17 @@ newimg=cv2.warpPerspective(img,matrix,(200,200))
 cv2.imshow('wallpaper',newimg)
 cv2.waitKey(0)
 
+#using mousepoint for different purposes
+#here we define a function ie if we did left button click it executes
+def mousepoints(event,x,y,flags,params):
+    if event==cv2.EVENT_LBUTTONDOWN:
+        print (x,y)
 
+cv2.imshow('wallpaper',img)
+#then we call this function that says do mousepoints function on wallpaper named image
+#we can do lots of applications on this thing
+cv2.setMouseCallback('wallpaper',mousepoints)
+cv2.waitKey(0)
 
 
 
